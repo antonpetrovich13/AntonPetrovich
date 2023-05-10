@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus,
+:active {
+  outline: none; }
+
+a:focus,
+a:active {
+  outline: none; }
+
+nav,
+footer,
+header,
+aside {
+  display: block; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input,
+button,
+textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a,
+a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*--------------------*/
+body {
+  color: #000;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  body._lock {
+    overflow: hidden; }
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto; }
+
+.container {
+  max-width: 1130px;
+  margin: 0px auto;
+  padding: 0px 15px; }
+
+.mainblock {
+  background-color: #100b16e3;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .mainblock__wrapper {
+    text-align: center;
+    color: #fff; }
+  .mainblock__avatar {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; }
+  .mainblock__title {
+    font-size: 3.75rem;
+    letter-spacing: 0.125em;
+    font-weight: 500;
+    margin: 0.9375em 0px 0.3125em 0px; }
+  .mainblock__subtitle {
+    font-size: 2.1875rem;
+    letter-spacing: 0.0625em; }
+  @media (max-width: 50em) {
+    .mainblock__avatar {
+      width: 250px;
+      height: 250px; }
+    .mainblock__title {
+      font-size: 2.8125rem; }
+    .mainblock__subtitle {
+      font-size: 1.5625rem; } }
+  @media (max-width: 30em) {
+    .mainblock__avatar {
+      width: 200px;
+      height: 200px; }
+    .mainblock__title {
+      font-size: 2.3125rem;
+      letter-spacing: 0.03125em; }
+    .mainblock__subtitle {
+      font-size: 1.375rem; } }
+
+.about {
+  background-color: #e7e1e1;
+  color: #100b16e3;
+  text-align: center;
+  padding: 4.375rem 0px; }
+  .about__title {
+    margin: 0px 0px 1.25em 0px; }
+  .about__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .about__column {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%; }
+  .about__point {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 500px;
+    gap: 0.9375em;
+    margin: 0 auto; }
+    .about__point:not(:last-child) {
+      padding: 0 0 1.875em 0; }
+  .about__label {
+    font-size: 1.5rem;
+    letter-spacing: 0.03125em;
+    width: 150px;
+    text-align: right; }
+  .about__info {
+    font-size: 1.25rem;
+    text-align: left; }
+    .about__info :not(:first-child) {
+      margin: 0.375em 0 0 0; }
+    .about__info :first-child {
+      margin-top: 3px; }
+
+.title {
+  display: inline-block;
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09375em; }
+  .title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    top: 110%;
+    left: 2px;
+    background-color: #100b16e3; }

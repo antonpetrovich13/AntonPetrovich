@@ -1,0 +1,82 @@
+// <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ> ============================================================================
+@import "nullstyle.scss";
+
+// <ПЕРЕВОДЫ МЕЖДУ ЕДИНИЦАМИ ИЗМЕРЕНИЯ>=================================================
+// В %
+
+
+@function prc($pxOne, $pxTwo) {
+	$result: ($pxOne/$pxTwo) * 100%;
+	@return $result;
+}
+
+//REM
+@function rem($px) {
+	$result: ($px/16)+rem;
+	@return $result;
+}
+
+//EM
+@function em($px) {
+	$result: ($px / 16)+em;
+	@return $result;
+}
+
+body {
+	color: #000;
+	font-size: rem(16);
+	font-family: 'Roboto', sans-serif;
+
+	&._lock {
+		overflow: hidden;
+	}
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// <ПОДКЛЮЧЕНИЕ ШРИФТОВ> ====================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+// <ОБОЛОЧКА, КОНТЕЙНЕР> ====================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+.container {
+	max-width: 1130px;
+	margin: 0px auto;
+	padding: 0px 15px;
+}
+
+// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ> ===============================================================================
+@import "header.scss";
+@import "content.scss";
+@import "footer.scss";
+
+// <ЧАСТЫЕ СТИЛИ> ============================================================================================
+
+.title {
+	display: inline-block;
+	position: relative;
+	font-size: rem(40);
+	text-transform: uppercase;
+	letter-spacing: em(1.5);
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: 2px;
+		top: 110%;
+		left: 2px;
+		background-color: #100b16e3;
+	}
+}

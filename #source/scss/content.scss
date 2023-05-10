@@ -1,0 +1,117 @@
+//  MAINBLOCK  =============================================================================
+.mainblock {
+	background-color: #100b16e3;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__wrapper {
+		text-align: center;
+		color: #fff;
+	}
+
+	&__avatar {
+		width: 350px;
+		height: 350px;
+		border-radius: 50%;
+	}
+
+	&__title {
+		font-size: rem(60);
+		letter-spacing: em(2);
+		font-weight: 500;
+		margin: em(15) 0px em(5) 0px;
+	}
+
+	&__subtitle {
+		font-size: rem(35);
+		letter-spacing: em(1);
+	}
+
+	@media (max-width: em(800)) {
+		&__avatar {
+			width: 250px;
+			height: 250px;
+		}
+
+		&__title {
+			font-size: rem(45);
+		}
+
+		&__subtitle {
+			font-size: rem(25);
+		}
+	}
+
+	@media (max-width: em(480)) {
+		&__avatar {
+			width: 200px;
+			height: 200px;
+		}
+
+		&__title {
+			font-size: rem(37);
+			letter-spacing: em(0.5);
+		}
+
+		&__subtitle {
+			font-size: rem(22);
+		}
+	}
+}
+
+//  ABOUT  =============================================================================
+.about {
+	background-color: #e7e1e1;
+	color: #100b16e3;
+	text-align: center;
+	padding: rem(70) 0px;
+
+	&__title {
+		margin: 0px 0px em(20) 0px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__column {
+		flex: 1 1 50%;
+
+	}
+
+	&__point {
+		display: flex;
+		align-items: flex-start;
+		width: 500px;
+		gap: em(15);
+		margin: 0 auto;
+
+		&:not(:last-child) {
+			padding: 0 0 em(30) 0;
+		}
+	}
+
+	&__label {
+		font-size: rem(24);
+		letter-spacing: em(0.5);
+		width: 150px;
+		text-align: right;
+	}
+
+	&__info {
+		font-size: rem(20);
+		text-align: left;
+
+		:not(:first-child) {
+			margin: em(6) 0 0 0;
+		}
+
+		:first-child {
+			margin-top: 3px;
+		}
+	}
+}
