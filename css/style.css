@@ -151,14 +151,10 @@ body {
   background-color: #e7e1e1;
   color: #100b16e3;
   text-align: center;
-  padding-top: 70px;
-  padding-bottom: 70px; }
+  padding-top: 70px; }
   @media (max-width: 1160px) {
     .works {
       padding-top: calc(30px + 40 * ((100vw - 320px) / 840)); } }
-  @media (max-width: 1160px) {
-    .works {
-      padding-bottom: calc(30px + 40 * ((100vw - 320px) / 840)); } }
   .works__title {
     font-size: 32px;
     text-transform: uppercase; }

@@ -36,7 +36,6 @@
 	color: #100b16e3;
 	text-align: center;
 	@include adaptiv-value('padding-top', 70, 30, 1);
-	@include adaptiv-value('padding-bottom', 70, 30, 1);
 
 	&__title {
 		@include adaptiv-value('font-size', 32, 20, 1);
