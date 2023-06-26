@@ -12,106 +12,75 @@
 	}
 
 	&__avatar {
-		width: 350px;
-		height: 350px;
+		@include adaptiv-value('width', 350, 200, 1);
+		@include adaptiv-value('height', 350, 200, 1);
 		border-radius: 50%;
 	}
 
 	&__title {
-		font-size: rem(60);
-		letter-spacing: em(2);
+		@include adaptiv-value('font-size', 60, 35, 1);
+		@include adaptiv-value('letter-spacing', 2, 0.5, 1);
 		font-weight: 500;
 		margin: em(15) 0px em(5) 0px;
 	}
 
 	&__subtitle {
-		font-size: rem(35);
+		@include adaptiv-value('font-size', 35, 22, 1);
 		letter-spacing: em(1);
-	}
-
-	@media (max-width: em(800)) {
-		&__avatar {
-			width: 250px;
-			height: 250px;
-		}
-
-		&__title {
-			font-size: rem(45);
-		}
-
-		&__subtitle {
-			font-size: rem(25);
-		}
-	}
-
-	@media (max-width: em(480)) {
-		&__avatar {
-			width: 200px;
-			height: 200px;
-		}
-
-		&__title {
-			font-size: rem(37);
-			letter-spacing: em(0.5);
-		}
-
-		&__subtitle {
-			font-size: rem(22);
-		}
 	}
 }
 
-//  ABOUT  =============================================================================
-.about {
+
+.works {
 	background-color: #e7e1e1;
 	color: #100b16e3;
 	text-align: center;
-	padding: rem(70) 0px;
+	@include adaptiv-value('padding-top', 70, 30, 1);
+	@include adaptiv-value('padding-bottom', 70, 30, 1);
 
 	&__title {
-		margin: 0px 0px em(20) 0px;
+		@include adaptiv-value('font-size', 32, 20, 1);
+		text-transform: uppercase;
 	}
 
-	&__wrapper {
+	&__text {
+		@include adaptiv-value('margin-top', 20, 15, 1);
+		@include adaptiv-value('line-height', 24, 20, 1);
+		@include adaptiv-value('font-size', 20, 16, 1);
+
+		:not(:first-child) {
+			@include adaptiv-value('margin-top', 10, 10, 1);
+		}
+	}
+
+	&__portfolio {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		margin: 50px -20px 0px -20px;
 	}
 
 	&__column {
-		flex: 1 1 50%;
-
+		flex: 0 0 33.333%;
+		padding: 0px 20px 20px 20px;
 	}
 
-	&__point {
-		display: flex;
-		align-items: flex-start;
-		width: 500px;
-		gap: em(15);
-		margin: 0 auto;
+	&__image {
+		@include adaptiv-value('width', 300, 250, 1);
+	}
 
-		&:not(:last-child) {
-			padding: 0 0 em(30) 0;
+	&__descriptiom {
+		color: #000;
+		@include adaptiv-value('font-size', 17, 14, 1);
+		@include adaptiv-value('max-width', 250, 100%, 1);
+		@include adaptiv-value('line-height', 20, 20, 1);
+		margin: 7px auto 0px auto;
+	}
+
+	@media (max-width: 960px) {
+		&__portfolio {
+			margin: 30px -20px 0px -20px;
 		}
 	}
 
-	&__label {
-		font-size: rem(24);
-		letter-spacing: em(0.5);
-		width: 150px;
-		text-align: right;
-	}
-
-	&__info {
-		font-size: rem(20);
-		text-align: left;
-
-		:not(:first-child) {
-			margin: em(6) 0 0 0;
-		}
-
-		:first-child {
-			margin-top: 3px;
-		}
-	}
 }
