@@ -36,7 +36,6 @@
 		justify-content: center;
 	}
 
-	&__top {}
 
 	&__title {
 		@include adaptiv-value('font-size', 60, 35, 1);
@@ -93,8 +92,6 @@
 			}
 		}
 	}
-
-	&__bottom {}
 
 	&__contacts {
 		display: flex;
@@ -166,11 +163,94 @@
 	}
 }
 
-//  WORKS  =============================================================================
+//  ABOUT  =============================================================================
+.about {
+	@include adaptiv-value('margin-top', 70, 30, 1);
+	@include adaptiv-value('margin-bottom', 70, 30, 1);
 
+	&__wrapper {
+		text-align: center;
+	}
+
+	&__content {
+		margin: 0 auto;
+		@include adaptiv-value('margin-top', 30, 25, 1);
+		@include adaptiv-value('line-height', 32, 25, 1);
+		@include adaptiv-value('font-size', 26, 20, 1);
+		text-align: left;
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			@include adaptiv-value('margin-bottom', 15, 15, 1);
+		}
+
+		& span {
+			font-weight: 500;
+		}
+	}
+
+	&__english {
+		font-weight: 500;
+	}
+
+	&__text {
+		@include adaptiv-value('margin-top', 40, 25, 1);
+		@include adaptiv-value('font-size', 26, 20, 1);
+		@include adaptiv-value('line-height', 30, 26, 1);
+	}
+
+	&__resume {
+		font-weight: 700;
+		display: inline-block;
+		color: #100b16e3;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #100b16e3;
+			transition: all 0.3s ease 0s;
+		}
+
+		@media(any-hover:hover) {
+			&:hover {
+				&:after {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		&__content {
+			text-align: center;
+			@include adaptiv-value('max-width', 500, 300, 1);
+		}
+
+		&__descr {
+			& span {
+				display: block;
+				font-weight: 700;
+			}
+		}
+
+		&__english {
+			font-weight: 700;
+		}
+	}
+}
+
+//  WORKS  =============================================================================
 .works {
-	background-color: #e7e1e1;
-	color: #100b16e3;
+	// background-color: #e7e1e1;
+	background-color: #100b16e3;
+	// color: #100b16e3;
+	color: #fff;
 	text-align: center;
 	@include adaptiv-value('padding-top', 70, 30, 1);
 
@@ -206,7 +286,8 @@
 	}
 
 	&__descriptiom {
-		color: #000;
+		// color: #000;
+		color: #eee6e6;
 		@include adaptiv-value('font-size', 17, 14, 1);
 		@include adaptiv-value('max-width', 250, 100%, 1);
 		@include adaptiv-value('line-height', 20, 20, 1);
