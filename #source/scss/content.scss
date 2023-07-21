@@ -174,7 +174,7 @@
 
 	&__content {
 		margin: 0 auto;
-		@include adaptiv-value('margin-top', 30, 25, 1);
+		@include adaptiv-value('margin-top', 30, 20, 1);
 		@include adaptiv-value('line-height', 32, 25, 1);
 		@include adaptiv-value('font-size', 26, 20, 1);
 		text-align: left;

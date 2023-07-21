@@ -365,7 +365,7 @@ body {
     text-align: left; }
     @media (max-width: 1160px) {
       .about__content {
-        margin-top: calc(25px + 5 * ((100vw - 320px) / 840)); } }
+        margin-top: calc(20px + 10 * ((100vw - 320px) / 840)); } }
     @media (max-width: 1160px) {
       .about__content {
         line-height: calc(25px + 7 * ((100vw - 320px) / 840)); } }

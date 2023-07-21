@@ -1,3 +1,33 @@
+function yearsOfExperience() {
+	const dateOfStart = new Date(2022, 1, 1);
+	const inputLocation = document.querySelector('.about__experience');
+	let yearsText = '';
+	let monthsText = '';
+
+	let differenceOfDates = Date.now() - dateOfStart;
+
+	let years = Math.floor(differenceOfDates / (1000 * 60 * 60 * 24 * 30 * 12)).toString();
+	let months = Math.floor(differenceOfDates / (1000 * 60 * 60 * 24 * 30) % 12).toString();
+
+	if ((years === 1 || years.endsWith(1)) && years !== '11') {
+		yearsText = 'год';
+	} else if ((years >= 2 && years <= 4) || (years > 21 && (years.endsWith(2) || years.endsWith(3) || years.endsWith(4)))) {
+		yearsText = 'года';
+	} else if ((years >= 5 && years <= 20) || (years > 24 && (years.endsWith(5) || years.endsWith(6) || years.endsWith(7) || years.endsWith(8) || years.endsWith(9) || years.endsWith(0)))) {
+		yearsText = 'лет';
+	}
+
+	if (months == 1) {
+		monthsText = 'месяц';
+	} else if (months >= 2 && months <= 4) {
+		monthsText = 'месяца';
+	} else if ((months >= 5 && months <= 12) || months == 0) {
+		monthsText = 'месяцев';
+	}
+
+	inputLocation.innerHTML = `<span>Опыт работы: </span> ${years} ${yearsText} ${months} ${monthsText}`;
+}
+yearsOfExperience();
 /*
 
 //АНИМАЦИЯ ПРИ СКРОЛЛЕ
