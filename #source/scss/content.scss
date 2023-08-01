@@ -247,22 +247,18 @@
 
 //  WORKS  =============================================================================
 .works {
-	// background-color: #e7e1e1;
 	background-color: #100b16e3;
-	// color: #100b16e3;
 	color: #fff;
 	text-align: center;
 	@include adaptiv-value('padding-top', 70, 30, 1);
+	@include adaptiv-value('padding-bottom', 70, 30, 1);
 
-	&__title {
-		@include adaptiv-value('font-size', 32, 20, 1);
-		text-transform: uppercase;
-	}
 
 	&__text {
-		@include adaptiv-value('margin-top', 20, 15, 1);
-		@include adaptiv-value('line-height', 24, 20, 1);
-		@include adaptiv-value('font-size', 20, 16, 1);
+		@include adaptiv-value('margin-top', 30, 20, 1);
+		@include adaptiv-value('margin-bottom', 30, 20, 1);
+		@include adaptiv-value('font-size', 24, 18, 1);
+		@include adaptiv-value('line-height', 26, 22, 1);
 
 		:not(:first-child) {
 			@include adaptiv-value('margin-top', 10, 10, 1);
@@ -273,31 +269,153 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		margin: 50px -20px 0px -20px;
+		margin: 0px -10px;
+		@include adaptiv-value('margin-top', 10, 5, 1);
 	}
 
 	&__column {
+		@include adaptiv-value('margin-top', 20, 15, 1);
 		flex: 0 0 33.333%;
-		padding: 0px 20px 20px 20px;
+		padding: 0px 10px;
+		transition: all 0.3s ease 0s;
+		position: relative;
+		z-index: 2;
+
+		@media(any-hover:hover) {
+			&:hover {
+				transform: scale(1.04);
+			}
+		}
+	}
+
+	&__column.hidden {
+		opacity: 0;
+		position: absolute;
+		transform: scale(0);
+	}
+
+	&__item {
+		height: 100%;
+		border-radius: 7px;
+		padding: 20px;
+		display: inline-block;
+		background-color: #fdfafa;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__photo {
+		overflow: hidden;
 	}
 
 	&__image {
 		@include adaptiv-value('width', 300, 250, 1);
+		transition: all 0.3s ease 0s;
 	}
 
 	&__descriptiom {
-		// color: #000;
-		color: #eee6e6;
-		@include adaptiv-value('font-size', 17, 14, 1);
-		@include adaptiv-value('max-width', 250, 100%, 1);
-		@include adaptiv-value('line-height', 20, 20, 1);
-		margin: 7px auto 0px auto;
+		transition: all 0.3s ease 0s;
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #000;
+		@include adaptiv-value('font-size', 18, 16, 1);
+		@include adaptiv-value('line-height', 22, 20, 1);
+		@include adaptiv-value('max-width', 270, 100%, 1);
+		margin: 10px auto 0px auto;
 	}
+}
 
-	@media (max-width: 960px) {
-		&__portfolio {
-			margin: 30px -20px 0px -20px;
+.filter {
+	@include adaptiv-value('height', 70, 50, 1);
+	// background-color: #fff;
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	@include adaptiv-value('margin-right', -10, -10, 1);
+	@include adaptiv-value('margin-left', -10, -10, 1);
+	border-radius: 10px;
+
+	&__link {
+		background-color: #fff;
+		flex: 0 0 25%;
+		height: 100%;
+		cursor: pointer;
+		color: #100b16e3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiv-value('padding-right', 10, 10, 1);
+		@include adaptiv-value('padding-left', 10, 10, 1);
+		padding: 12px;
+		transition: all 0.3s ease 0s;
+		position: relative;
+		@include adaptiv-value('font-size', 18, 15, 1);
+		@include adaptiv-value('line-height', 20, 16, 1);
+
+		&.active {
+			background-color: #000;
+			color: #fff;
+			transition: all 0.3s ease 0s;
+
+
+		}
+
+		&:first-child {
+			border-top-left-radius: 9px;
+			border-bottom-left-radius: 9px;
+		}
+
+		&:last-child {
+			border-top-right-radius: 9px;
+			border-bottom-right-radius: 9px;
+		}
+
+		&:not(:last-child) {
+			&:after {
+				content: '';
+				position: absolute;
+				width: 1px;
+				height: 50%;
+				top: 50%;
+				right: 0;
+				background-color: #000000;
+				transform: translate(0, -50%);
+			}
+		}
+
+		@media(any-hover:hover) {
+			&:hover {
+				color: #fff;
+				background-color: #000000;
+			}
+
 		}
 	}
 
+}
+
+@media (max-width: 550px) {
+	.works {
+		&__portfolio {
+			@include adaptiv-value('margin-top', 70, 70, 1);
+		}
+	}
+
+	.filter {
+		&__link {
+			flex: 1 1 33.333%;
+			border-radius: 9px;
+			@include adaptiv-value('width', 70, 50, 1);
+			margin: 3px 3px;
+
+			&:after {
+				display: none;
+			}
+		}
+	}
 }

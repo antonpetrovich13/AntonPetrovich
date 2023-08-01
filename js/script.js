@@ -1,3 +1,4 @@
+// ОБНОВЛЕНИЕ ГОДОВ ОПЫТА
 function yearsOfExperience() {
 	const dateOfStart = new Date(2022, 1, 1);
 	const inputLocation = document.querySelector('.about__experience');
@@ -28,6 +29,77 @@ function yearsOfExperience() {
 	inputLocation.innerHTML = `<span>Опыт работы: </span> ${years} ${yearsText} ${months} ${monthsText}`;
 }
 yearsOfExperience();
+
+// ФИЛЬТР РАБОТ
+function worksFilter() {
+	const filterField = document.querySelector('.filter');
+	let workBlocks = document.querySelectorAll('.works__column');
+	let lath = document.querySelectorAll('.filter__link');
+
+	filterField.addEventListener('click', function (event) {
+		let target = event.target;
+		let dataAttribute = target.dataset.filter;
+
+		// ДОБАВЛЕНИЕ ФОНА АКТИВНОЙ КОНПКЕ
+		if (!target.classList.contains('active')) {
+			lath.forEach(el => {
+				el.classList.remove('active');
+			});
+			target.classList.add('active');
+		}
+
+		// ФИЛЬТРАЦИЯ ПОКАЗА ПО ДАТА-АТТРИБУТУ
+		switch (dataAttribute) {
+			case 'all':
+				workBlocks.forEach(el => {
+					// el.style.display = 'block';
+					showNonActiveBlocks(el);
+				});
+				break;
+			case 'mails':
+				workBlocks.forEach(el => {
+					if (el.classList.contains('_mails')) {
+						showNonActiveBlocks(el);
+					} else {
+						hideNonActiveBlocks(el);
+					}
+				});
+				break;
+			case 'sytes':
+				workBlocks.forEach(el => {
+					if (el.classList.contains('_sytes')) {
+						showNonActiveBlocks(el);
+					} else {
+						hideNonActiveBlocks(el);
+					}
+				})
+				break;
+			case 'javascript':
+				workBlocks.forEach(el => {
+					if (el.classList.contains('_javascript')) {
+						showNonActiveBlocks(el);
+					} else {
+						hideNonActiveBlocks(el);
+					}
+				})
+				break;
+		}
+
+		// ФУНКЦИЯ СКРЫТИЯ/ПОКАЗА БЛОКОВ
+		function hideNonActiveBlocks(element) {
+			element.classList.add('hidden');
+		}
+
+		function showNonActiveBlocks(element) {
+			element.classList.remove('hidden');
+		}
+
+	})
+}
+worksFilter();
+
+
+
 /*
 
 //АНИМАЦИЯ ПРИ СКРОЛЛЕ
